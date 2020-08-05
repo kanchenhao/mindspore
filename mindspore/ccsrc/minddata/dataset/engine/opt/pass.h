@@ -37,11 +37,9 @@ class SkipOp;
 
 class ShuffleOp;
 
-#ifndef ENABLE_ANDROID
 class MindRecordOp;
 
 class TFReaderOp;
-#endif
 
 #ifdef ENABLE_PYTHON
 class FilterOp;
@@ -160,11 +158,9 @@ class NodePass : public Pass {
 
   virtual Status RunOnNode(std::shared_ptr<ShuffleOp> node, bool *modified);
 
-#ifndef ENABLE_ANDROID
   virtual Status RunOnNode(std::shared_ptr<MindRecordOp> node, bool *modified);
 
   virtual Status RunOnNode(std::shared_ptr<TFReaderOp> node, bool *modified);
-#endif
 
 #ifdef ENABLE_PYTHON
   virtual Status RunOnNode(std::shared_ptr<FilterOp> node, bool *modified);
